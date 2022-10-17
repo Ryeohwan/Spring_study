@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 이 bean 이라는거 class 에 적혀있는 것으로 된  하나가 객체를 하나 만드는 것과 같다. 7,8번줄은 동일한 것이다. -->
+<!--com.coffee3.Americano = new com.coffee3.Americano();  -->
+<bean id = "coffee1" class = "com.coffee3.Americano"></bean>
+
+<bean id = "coffee2" class = "com.coffee3.CafeLatte"></bean>
+
+</beans>

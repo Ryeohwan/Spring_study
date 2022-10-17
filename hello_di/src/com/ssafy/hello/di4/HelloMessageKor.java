@@ -1,0 +1,15 @@
+package com.ssafy.hello.di4;
+
+public class HelloMessageKor implements HelloMessage{
+	public HelloMessageKor() {
+		System.out.println("Kor ∞¥√º ∏∏µÈæÓ¿Ø!~~");
+	}
+	
+	public void init() {
+		System.out.println("Kor ∞¥√º∏¶ √ ±‚»≠");
+	}
+	
+	public String hello(String name) {
+		return "æ»≥Á"+name;
+	}
+}

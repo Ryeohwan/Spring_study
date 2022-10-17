@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id = "kor" name = "hkor,hellokor" class = "com.ssafy.hello.di4.HelloMessageKor"></bean>
+<bean id = "eng" class = "com.ssafy.hello.di4.HelloMessageEng"></bean>
+<!--  prototype 은 기본 싱글톤으로 되어있는데 객체 여러 개 만들고싶을 때 쓴다. -->
+</beans>
