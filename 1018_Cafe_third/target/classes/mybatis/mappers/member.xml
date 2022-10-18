@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace = "mapper.member">
+	<insert id="memberInsert" parameterType="member">
+		insert into member (name,id,pw) values(#{name},#{id},#{pw})  
+		<!--  $ 로 가면 그냥 state 로 간다. 성능 / 보안 엄청난 차이가 있다. 취약점이 생긴다. -->
+	</insert>
+	<select id="login" resultType="String" parameterType="member">
+		<![CDATA[
+			select name from member where id=#{id} and pw=#{pw}
+		]]>
+	</select>
+</mapper>
+
