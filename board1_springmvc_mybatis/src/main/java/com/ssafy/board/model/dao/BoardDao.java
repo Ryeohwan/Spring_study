@@ -1,19 +1,37 @@
 package com.ssafy.board.model.dao;
 
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Map;
+
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.ssafy.board.model.BoardDto;
 
-public interface BoardDao {
-
-	int writeArticle(BoardDto boardDto) throws SQLException;
-	List<BoardDto> listArticle(Map<String, String> map) throws SQLException;
-	int totalArticleCount(Map<String, String> map) throws SQLException;
-	BoardDto getArticle(int articleNo) throws SQLException;
-	void updateHit(int articleNo) throws SQLException;
-	void modifyArticle(BoardDto boardDto) throws SQLException;
-	void deleteArticle(int articleNo) throws SQLException;
+@Repository
+public class BoardDao {
+	
+	@Autowired
+	SqlSession sqlSession;
+	
+	public int writeArticle(BoardDto b) {
+		return sqlSession.insert("mapper.board.writeArticle",b);
+	}
+	
+	public BoardDto getArticle(int b) {
+		return sqlSession.selectOne("mapper.board.getArticle", b);
+	}
+	
+	public void updateHit(int b) {
+		sqlSession.selectOne("mapper.board.updateHit", b);
+	}
+	
+	public void modifyArticle(BoardDto b) {
+		sqlSession.update("mapper.board.modifyArticle", b);
+	}
+	
+	public void deleteArticle(int b) {
+		sqlSession.delete("mapper.board.deleteArticle", b);
+	} 
 	
 }
+

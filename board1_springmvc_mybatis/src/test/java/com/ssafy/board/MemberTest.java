@@ -74,7 +74,7 @@ public class MemberTest extends UnitTestConfig {
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("userid", "ssafy");
 		map.put("userpwd", "1234");
-		MemberDto memberDto = memberService.loginMember(map);
+		MemberDto memberDto = memberService.loginMember((MemberDto) map);
 		assertNotNull(memberDto);
 		logger.debug("memberDto : {}", memberDto);
 	}

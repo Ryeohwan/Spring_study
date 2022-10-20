@@ -70,7 +70,7 @@ public class MemberController {
 	public String login(@RequestParam Map<String, String> map, Model model, HttpSession session, HttpServletResponse response) {
 		logger.debug("map : {}", map.get("userid"));
 		try {
-			MemberDto memberDto = memberService.loginMember(map);
+			MemberDto memberDto = memberService.loginMember((MemberDto) map);
 			if(memberDto != null) {
 				session.setAttribute("userinfo", memberDto);
 				

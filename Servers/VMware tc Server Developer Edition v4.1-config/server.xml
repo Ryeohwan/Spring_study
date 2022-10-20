@@ -16,7 +16,7 @@
             </Realm>
             <Host appBase="webapps" autoDeploy="true" deployOnStartup="true" deployXML="true" name="localhost" unpackWARs="true">
                 <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log." suffix=".txt"/>
-            <Context docBase="1018_Cafe" path="/cafe" reloadable="true" source="org.eclipse.jst.jee.server:1018_Cafe"/><Context docBase="1018_Cafe_again" path="/cafe2" reloadable="true" source="org.eclipse.jst.jee.server:1018_Cafe_again"/></Host>
+            <Context docBase="1018_Cafe" path="/cafe" reloadable="true" source="org.eclipse.jst.jee.server:1018_Cafe"/><Context docBase="1018_Cafe_again" path="/cafe2" reloadable="true" source="org.eclipse.jst.jee.server:1018_Cafe_again"/><Context docBase="board1_springmvc_mybatis" path="/board" reloadable="true" source="org.eclipse.jst.jee.server:board1_springmvc_mybatis"/></Host>
         </Engine>
         <Connector acceptCount="100" connectionTimeout="20000" executor="tomcatThreadPool" maxKeepAliveRequests="15" port="${nio.http.port}" protocol="org.apache.coyote.http11.Http11NioProtocol" redirectPort="${nio.https.port}"/>
     </Service>

@@ -25,14 +25,6 @@ public class BoardServiceImpl implements BoardService {
 		return boardDao.writeArticle(boardDto);
 	}
 
-	@Override
-	public List<BoardDto> listArticle(Map<String, String> map) throws Exception {
-		int pgNo = Integer.parseInt(map.get("pgno"));
-		int start = pgNo * SizeConstant.LIST_SIZE - SizeConstant.LIST_SIZE;
-		map.put("start", start + "");
-		map.put("listsize", SizeConstant.LIST_SIZE + "");
-		return boardDao.listArticle(map);
-	}
 
 	@Override
 	public BoardDto getArticle(int articleNo) throws Exception {
@@ -52,6 +44,12 @@ public class BoardServiceImpl implements BoardService {
 	@Override
 	public void deleteArticle(int articleNo) throws Exception {
 		boardDao.deleteArticle(articleNo);
+	}
+
+	@Override
+	public List<BoardDto> listArticle(Map<String, String> map) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -1,6 +1,5 @@
 package com.ssafy.member.model.service;
 
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,19 +17,21 @@ public class MemberServiceImpl implements MemberService {
 		this.memberDao = memberDao;
 	}
 
-	@Override
-	public int idCheck(String userId) throws Exception {
-		return memberDao.idCheck(userId);
+
+	public void joinMember(MemberDto memberDto) throws Exception {
+		memberDao.memberInsert(memberDto);
 	}
 
 	@Override
-	public int joinMember(MemberDto memberDto) throws Exception {
-		return memberDao.joinMember(memberDto);
+	public MemberDto loginMember(MemberDto memberDto) throws Exception {
+		return memberDao.login(memberDto);
 	}
 
+
 	@Override
-	public MemberDto loginMember(Map<String, String> map) throws Exception {
-		return memberDao.loginMember(map);
+	public int idCheck(String userId) {
+		return 0;
 	}
+
 
 }
