@@ -46,6 +46,7 @@ public class BoardController {
 		return "board/write";
 	}
 	
+	// 게시판 글 작성
 	@PostMapping("/writeBoard")
 	public String write(@RequestParam("subject")String subject,@RequestParam("content")String content,@RequestParam("upfile") MultipartFile file) {
 		System.out.println(subject);
