@@ -24,7 +24,7 @@ public class BoardController {
 	@Autowired
 	BoardService boardService;
 	
-	
+	// 게시판 글 목록 확인
 	@GetMapping("/list")
 	public ModelAndView list(@RequestParam Map<String,String> map) {
 		ModelAndView mav=new ModelAndView();
